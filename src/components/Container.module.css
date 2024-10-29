@@ -1,0 +1,9 @@
+.container {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 15px;
+  width: 50%;
+  background-color: antiquewhite;
+  min-width: 300px;
+  padding: 10px;
+}

@@ -1,6 +1,7 @@
 .kg-heading {
   font-weight: 700;
   color: chocolate;
-  text-align: center;
   background-color: bisque;
+  margin: 7px 7px;
+  text-align: center;
 }
