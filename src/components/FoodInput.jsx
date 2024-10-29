@@ -1,5 +1,6 @@
 import styles from "./FoodInput.module.css";
-const FoodInput = ({ handleOnChange }) => {
+// { handleOnChange } replaced by handleKeyDown
+const FoodInput = ({ handleKeyDown }) => {
   // handleOnChange Function will execute each time a value inside the input box will change.
   // moved handleOnChange() to its parents component
 
@@ -9,7 +10,8 @@ const FoodInput = ({ handleOnChange }) => {
         type="text"
         placeholder="Enter Food Item Here!"
         className={styles.foodInput}
-        onChange={handleOnChange}
+        // onChange={handleOnChange}
+        onKeyDown={handleKeyDown}
       />
     </>
   );
