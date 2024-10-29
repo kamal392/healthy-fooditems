@@ -15,7 +15,7 @@ function App() {
   //   "Grilled Grouper",
   // ];
 
-  let [textToShow, setTextState] = useState();
+  // let [textToShow, setTextState] = useState();
   // create a state for food array so that a user can add items to the food array.
   let [foodItems, setFoodItem] = useState([
     "Russian Salad",
@@ -28,13 +28,17 @@ function App() {
   //   console.log(event.target.value);
   //   setTextState(event.target.value);
   // };
+  //A function which is going to fire when a user hit enter after typing something in the input box.
   const onKeyDown = (event) => {
     if (event.key === "Enter") {
+      // newFoodItem holds current value of input box
       let newFoodItem = event.target.value;
-      console.log("The new food Item Enter is " + newFoodItem);
+      // This is resetting value to an empty string after the press enter.
+      event.target.value = "";
+      // newItems is the new array that holds the old array elements and new element.
+      let newItems = [...foodItems, newFoodItem];
+      setFoodItem(newItems);
     }
-    // console.log(event);
-    // setTextState(event.target.value);
   };
 
   return (
@@ -42,9 +46,9 @@ function App() {
     <Container>
       <h1 className="kg-heading ">Healthy food</h1>
       {/* passing foodItems array into ErrorMessage and FoodItems component using props. Always catch the prop using left side like (items in this case) */}
-      <ErrorMessage items={foodItems}></ErrorMessage>
       {/* <FoodInput handleOnChange={handleOnChange}></FoodInput> */}
       <FoodInput handleKeyDown={onKeyDown}></FoodInput>
+      <ErrorMessage items={foodItems}></ErrorMessage>
       <FoodItems items={foodItems}></FoodItems>
     </Container>
   );
